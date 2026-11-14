@@ -11,8 +11,13 @@ define d = Character("JEREMY", color="#bc4055")
 
 # IMÁGENES
 image FONDO1 = "images/FONDO ESCENA 1.jpeg"
+image FONDO2 = "images/FONDO ESCENA 2.jpeg"
 image Rise = "images/RISE.png"
-
+image CHRISTINA = "images/CHRISTINA.png"
+image REID = "images/REID WISEMAN.png"
+image VICTOR = "images/VICTOR.png"
+image JEREMY = "images/JEREMY.png"
+image FondoAstronautas = "FONDO ASTRONAUTAS.jpeg"
 
 # ESCENA 1
 label start:
@@ -66,17 +71,25 @@ jump escena_2
 
 # ESCENA 2
 label escena_2:
+    scene FondoAstronautas
 
     RISE "Antes de comenzar, quiero presentarte a quienes estarán a bordo."
+    
+    scene FONDO2
 
+    show REID
     a "Soy Reid Wiseman, comandante de Artemis II. Nuestra prioridad es trabajar como equipo y asegurarnos de que cada procedimiento se cumpla correctamente."
-
+    hide REID
+    show VICTOR
     b "Victor Glover, piloto de Orion. Estaremos atentos a los sistemas de la nave y a las operaciones necesarias durante el vuelo."
-
+    hide VICTOR
+    show CHRISTINA
     c "Christina Koch, especialista de misión. Esta prueba nos permitirá evaluar sistemas esenciales para los futuros viajes tripulados."
-
+    hide CHRISTINA
+    show JEREMY
     d "Jeremy Hansen, especialista de misión. Esta misión representa la colaboración de personas y equipos de diferentes países para explorar más allá de la Tierra."
-
+    hide JEREMY
+    show Rise
     RISE "¡Ahora sí! Ya conoces a la tripulación. Recuerda que una misión espacial es el resultado del trabajo de muchísimas personas, tanto dentro como fuera de la nave."
 
 return
