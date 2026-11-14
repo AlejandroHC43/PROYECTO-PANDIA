@@ -12,6 +12,7 @@ define d = Character("JEREMY", color="#bc4055")
 # IMÁGENES
 image FONDO1 = "images/FONDO ESCENA 1.jpeg"
 image FONDO2 = "images/FONDO ESCENA 2.jpeg"
+image FONDO3 = "images/FONDO ESCENA 3.jpeg"
 image Rise = "images/RISE.png"
 image CHRISTINA = "images/CHRISTINA.png"
 image REID = "images/REID WISEMAN.png"
@@ -64,7 +65,7 @@ label start:
             $ rol_jugador = "Científico"
             RISE "Análisis, investigación y resolución de enigmas científicos y de telemetría."
 
-RISE "Configuración completada. ¡Que comience la misión!"
+    RISE "Configuración completada. ¡Que comience la misión!"
 
 jump escena_2
 
@@ -92,4 +93,37 @@ label escena_2:
     show Rise
     RISE "¡Ahora sí! Ya conoces a la tripulación. Recuerda que una misión espacial es el resultado del trabajo de muchísimas personas, tanto dentro como fuera de la nave."
 
+jump escena_3
+
+# Escena 3. El primer desafío: condiciones meteorológicas
+label escena_3:
+
+    scene FONDO3
+
+    RISE "Atención, explorador. Antes del lanzamiento necesitamos revisar las condiciones atmosféricas."
+
+    RISE "Los vientos en altura pueden generar fuerzas adicionales sobre el cohete durante el ascenso. Por eso, los equipos de NASA recopilan información meteorológica y actualizan los parámetros de vuelo."
+
+    RISE "Existe un procedimiento llamado DOLILU: Day-of-Launch I-Load Update."
+
+    RISE "Este procedimiento permite actualizar información del software de vuelo del SLS para considerar las condiciones ambientales del día del lanzamiento."
+
+    # Desafío 1: Evaluación meteorológica
+    menu:
+        "Debemos decidir qué hacer:"
+
+        "Continuar con los parámetros anteriores sin revisar los cambios.":
+            RISE "Recuerda que las condiciones atmosféricas influyen en las cargas que experimenta el cohete durante el ascenso."
+            RISE "No podemos ignorar esta información. Revisemos nuevamente el procedimiento."
+            #jump escena_4
+
+        "Incorporar los datos meteorológicos, actualizar DOLILU y verificar la trayectoria.":
+            RISE "¡Excelente trabajo! Los datos meteorológicos deben integrarse en la actualización y los equipos deben verificar los resultados antes de continuar."
+            RISE "Has completado tu primera tarea."
+            #jump escena_4
+
+        "Ignorar los vientos porque el cohete ya está preparado.":
+            RISE "Recuerda que las condiciones atmosféricas influyen en las cargas que experimenta el cohete durante el ascenso."
+            RISE "No podemos ignorar esta información. Revisemos nuevamente el procedimiento."
+            #jump escena_4
 return
