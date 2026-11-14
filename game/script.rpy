@@ -1,19 +1,26 @@
 ﻿
-# Declarar variables
+# VARIABLES
 default rol_jugador = ""
 
-# Definir personajes
+# PERSONAJES
 define RISE = Character("RISE", color="#8be9fd")
+define a = Character("REID", color="#c8ffc8")
+define b = Character("VICTOR", color="#c4e80f")
+define c = Character("CHRISTINA", color="#0c83d9")
+define d = Character("JEREMY", color="#bc4055")
 
-# Definir imágenes
+# IMÁGENES
 image FONDO1 = "images/FONDO ESCENA 1.jpeg"
+image Rise = "images/RISE.png"
 
 
-# Inicio del juego
+# ESCENA 1
 label start:
 
     scene FONDO1
     with fade
+
+    show Rise
 
     RISE "Bienvenido, explorador. Me llamo RISE y seré tu asistente durante esta misión."
 
@@ -25,7 +32,6 @@ label start:
 
     RISE "No estarás solo. Yo te ayudaré a interpretar los datos, pero las decisiones operativas reales corresponden a los especialistas y responsables de misión."
 
-    # Menú inicial de preparación
     menu:
         "¿Estás preparado?"
 
@@ -36,7 +42,6 @@ label start:
             RISE "Nuestra misión consiste en comprobar que Orion y sus sistemas pueden transportar de manera segura a una tripulación alrededor de la Luna y de regreso a la Tierra."
             RISE "Comenzaremos con la preparación del lanzamiento y avanzaremos hasta alcanzar la órbita terrestre."
 
-    # Selección de rol
     RISE "Antes de adentrarnos de lleno en la misión, ¿qué rol deseas tener?"
 
     menu:
@@ -54,6 +59,24 @@ label start:
             $ rol_jugador = "Científico"
             RISE "Análisis, investigación y resolución de enigmas científicos y de telemetría."
 
-    RISE "Configuración completada. ¡Que comience la misión!"
+RISE "Configuración completada. ¡Que comience la misión!"
+
+jump escena_2
+
+
+# ESCENA 2
+label escena_2:
+
+    RISE "Antes de comenzar, quiero presentarte a quienes estarán a bordo."
+
+    a "Soy Reid Wiseman, comandante de Artemis II. Nuestra prioridad es trabajar como equipo y asegurarnos de que cada procedimiento se cumpla correctamente."
+
+    b "Victor Glover, piloto de Orion. Estaremos atentos a los sistemas de la nave y a las operaciones necesarias durante el vuelo."
+
+    c "Christina Koch, especialista de misión. Esta prueba nos permitirá evaluar sistemas esenciales para los futuros viajes tripulados."
+
+    d "Jeremy Hansen, especialista de misión. Esta misión representa la colaboración de personas y equipos de diferentes países para explorar más allá de la Tierra."
+
+    RISE "¡Ahora sí! Ya conoces a la tripulación. Recuerda que una misión espacial es el resultado del trabajo de muchísimas personas, tanto dentro como fuera de la nave."
 
 return
