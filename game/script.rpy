@@ -1,32 +1,59 @@
-﻿# Coloca el código de tu juego en este archivo.
+﻿
+# Declarar variables
+default rol_jugador = ""
 
-# Declara los personajes usados en el juego como en el ejemplo:
+# Definir personajes
+define RISE = Character("RISE", color="#8be9fd")
 
-define e = Character("Eileen")
+# Definir imágenes
+image FONDO1 = "images/FONDO ESCENA 1.jpeg"
 
 
-# El juego comienza aquí.
-
+# Inicio del juego
 label start:
 
-    # Muestra una imagen de fondo: Aquí se usa un marcador de posición por
-    # defecto. Es posible añadir un archivo en el directorio 'images' con el
-    # nombre "bg room.png" or "bg room.jpg" para que se muestre aquí.
+    scene FONDO1
+    with fade
 
-    scene bg room
+    RISE "Bienvenido, explorador. Me llamo RISE y seré tu asistente durante esta misión."
 
-    # Muestra un personaje: Se usa un marcador de posición. Es posible
-    # reemplazarlo añadiendo un archivo llamado "eileen happy.png" al directorio
-    # 'images'.
+    RISE "Hoy no estamos ante un lanzamiento cualquiera. Cuatro astronautas están preparados para viajar alrededor de la Luna a bordo de la nave Orion."
 
-    show eileen happy
+    RISE "Pero llegar al espacio requiere mucho más que encender un cohete. Miles de sistemas, personas y procedimientos deben trabajar en perfecta coordinación."
 
-    # Presenta las líneas del diálogo.
+    RISE "Tu función será apoyar al equipo de análisis de misión. Tendrás acceso a información meteorológica, indicadores de vuelo y comunicaciones de la tripulación."
 
-    e "Has creado un nuevo juego Ren'Py."
+    RISE "No estarás solo. Yo te ayudaré a interpretar los datos, pero las decisiones operativas reales corresponden a los especialistas y responsables de misión."
 
-    e "Añade una historia, imágenes y música, ¡y puedes presentarlo al mundo!"
+    # Menú inicial de preparación
+    menu:
+        "¿Estás preparado?"
 
-    # Finaliza el juego:
+        "Sí, estoy listo para comenzar.":
+            RISE "Excelente. Comencemos con los preparativos."
 
-    return
+        "Necesito conocer primero los objetivos.":
+            RISE "Nuestra misión consiste en comprobar que Orion y sus sistemas pueden transportar de manera segura a una tripulación alrededor de la Luna y de regreso a la Tierra."
+            RISE "Comenzaremos con la preparación del lanzamiento y avanzaremos hasta alcanzar la órbita terrestre."
+
+    # Selección de rol
+    RISE "Antes de adentrarnos de lleno en la misión, ¿qué rol deseas tener?"
+
+    menu:
+        "Elige tu especialidad:"
+
+        "Ingeniero":
+            $ rol_jugador = "Ingeniero"
+            RISE "Experto en mecánica y sistemas. Capaz de reparar estructuras y resolver fallos críticos."
+
+        "Piloto":
+            $ rol_jugador = "Piloto"
+            RISE "Maestro de los controles y los reflejos rápidos. Sobresale en navegación y control bajo presión."
+
+        "Científico":
+            $ rol_jugador = "Científico"
+            RISE "Análisis, investigación y resolución de enigmas científicos y de telemetría."
+
+    RISE "Configuración completada. ¡Que comience la misión!"
+
+return

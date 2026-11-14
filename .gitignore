@@ -24,3 +24,9 @@
 /dialogue.tab
 /dialogue.txt
 /strings.json
+
+/strings.json
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
