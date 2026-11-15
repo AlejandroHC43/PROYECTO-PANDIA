@@ -602,15 +602,15 @@ label escena_3_2:
         "¿Que debemos hacer?"
 
         "Ejecutar la maniobra sin verificar los parametros.":
-        scene 44
+         scene 44
          RISE "¡Cuidado, explorador! No debemos realizar una maniobra sin verificar primero los parámetros de navegación. Cada decisión debe basarse en información confiable y en el plan de vuelo aprobado. ¡Inténtalo nuevamente!"
 
         "Comparar los parámetros con la solución aprobada y confirmar las verificaciones.":
-        scene 44
+         scene 44
          RISE "¡Excelente! Antes de una maniobra es fundamental confirmar que los datos de navegación y los parametros de ejecución sean coherentes con el plan aprobado."
 
         "Modificar la orientación de Orion sin consultar los datos.":
-        scene 44
+         scene 44
          RISE "¡Cuidado, explorador! No debemos realizar una maniobra sin verificar primero los parámetros de navegación. Cada decisión debe basarse en información confiable y en el plan de vuelo aprobado. ¡Inténtalo nuevamente!"
 
 #Escena 3. Una desviación inesperada
@@ -778,20 +778,20 @@ RISE "Explorador, oberva los indicadores. La velocidad está disminuyendo y debe
 
 #Desafio 2. Secuencia de aceleración
 label escena_2_2:
-scene 57
+    scene 57
     RISE "¿Cuál es el orden correcto de las principales fases de descenso?"
     scene 60
     menu:  
         "Paracaidas, reingreso atmosferico, amerizaje.":
-        scene 57
+         scene 57
          RISE "Recuerda que primero la cápsula debe atravesar la atmósfera, despues reducir su velocidad y finalmente abrir sus paracaidas antes de tocar el océano."
 
         "Reingreso atmosférico, desaceleración aerodinámica, despliegue de paracaídas.":
-        scene 57
+         scene 57
          RISE "La atmosfera contribuye primero a reducir la velocidad. Despues, el sistema de paracaidas permite completar el descenso hacia el océano."
 
         "Reingreso atmosférico, amerizaje, despliegue de paracaídas.":
-        scene 57
+         scene 57
          RISE "Recuerda que primero la cápsula debe atravesar la atmósfera, despues reducir su velocidad y finalmente abrir sus paracaidas antes de tocar el océano."
 
 scene 57
@@ -811,13 +811,13 @@ RISE "¡Amerizaje confirmado! Orion ha regresado a la Tierra."
 
  #Desafio 3. Confirmación del amerizaje.
 label escena3__1:
- RISE "La cápsula se encuentra en el océano. Antes de dar por terminada nuestra simulación, necesitamos verificar su estado."
- RISE "¿Qué información debemos confirmar?"
- scene 10
-menu: 
+    RISE "La cápsula se encuentra en el océano. Antes de dar por terminada nuestra simulación, necesitamos verificar su estado."
+    RISE "¿Qué información debemos confirmar?"
+    scene 10
+    menu: 
 
         "Únicamente que la cápsula haya tocado el agua.":
-        scene 15
+         scene 15
          RISE "Recuerda, el amerizaje no termina la misión; primero debemos verificar que todo esté seguro."
 
         "El estado de la tripulación, las condiciones de la cápsula y la comunicación con los equipos de recuperación.":
@@ -827,26 +827,15 @@ menu:
         "Que los motores continúen encendidos.":
          scene 15
          RISE "Recuerda, el amerizaje no termina la misión; primero debemos verificar que todo esté seguro."
-scene Fin
-a "Huston, aquí Artemis II. Hemos regresado."
-b "Ha sido un viaje extraordinario."
-c "Todo lo que aprendimos ayudará a preparar las proximas misiones."
-d "Nuestro viaje termina aquí, pero la exploración continúa."
+    scene Fin
+    a "Huston, aquí Artemis II. Hemos regresado."
+    b "Ha sido un viaje extraordinario."
+    c "Todo lo que aprendimos ayudará a preparar las proximas misiones."
+    d "Nuestro viaje termina aquí, pero la exploración continúa."
 
-RISE "¡Lo logramos, explorador! Hemos completado nuestro viaje alrededor de la luna y regresado a casa."
-RISE "Desde el alnzamiento hasta el amerizaje, cada etapa nos enseñó que la exploración espacial requiere precición, conocimiento y trabajo en equipo."
-RISE "Y recuerda: este es solo el comienzo de una nueva era de exploración."
+    RISE "¡Lo logramos, explorador! Hemos completado nuestro viaje alrededor de la luna y regresado a casa."
+    RISE "Desde el alnzamiento hasta el amerizaje, cada etapa nos enseñó que la exploración espacial requiere precición, conocimiento y trabajo en equipo."
+    RISE "Y recuerda: este es solo el comienzo de una nueva era de exploración."
 
-"MISIÓN COMPLETADA."
-
-
-
-
-
-
-
-
-
-
-
+    "MISIÓN COMPLETADA."
 return
