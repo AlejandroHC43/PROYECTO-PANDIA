@@ -57,6 +57,8 @@ image 34 = "34.png"
 
 # ESCENA 1
 label start:
+    $ renpy.music.set_volume(1.0, delay=0, channel="music")
+    play music "audio/Pandia.mp3" loop fadein 2.0
 
     scene 1
     with fade
@@ -475,17 +477,17 @@ label scene_4:
 #Escena 15. Comunicación con Tierra
 label escena_15:
 
-scene 37
-     CM "Artemis II, aquí Houston. Solicitamos actualización del estado de los sistemas."
-     scene 38
-     a "Houston, aquí Artemis II. Hemos completado las comprobaciones previstas para esta etapa."
-     scene 39
-     b "Los datos de navegación han sido revisados."
-     scene 40
-     c "También hemos realizado la evaluación de los indicadores ambientales."
-     scene 41
-     d "La tripulación continúa con las actividades de misión."
-     RISE "Explorador, hemos conseguido algo importante. Conocemos mejor el comportamiento de los sistemas de Orion."
+    scene 37
+    CM "Artemis II, aquí Houston. Solicitamos actualización del estado de los sistemas."
+    scene 38
+    a "Houston, aquí Artemis II. Hemos completado las comprobaciones previstas para esta etapa."
+    scene 39
+    b "Los datos de navegación han sido revisados."
+    scene 40
+    c "También hemos realizado la evaluación de los indicadores ambientales."
+    scene 41
+    d "La tripulación continúa con las actividades de misión."
+    RISE "Explorador, hemos conseguido algo importante. Conocemos mejor el comportamiento de los sistemas de Orion."
 
 #Escena 16. Resumen de la misión
 label escena_16:
@@ -695,19 +697,19 @@ RISE "Durante esta etapa, supervisaremos la velocidad, la orientación u la tray
 
 RISE "Explorador, nuestra consola de entretenimiento muestra una discrepancia entre dos estimaciones de orientación."
 
-  menu:
-  "ignorar la diferencia y continuar."
-  RISE "No."
+menu:
+    "ignorar la diferencia y continuar.":
+     RISE "No."
 
-  "Comparar los datos, comprobar la información de navegación y comunicar la discrepancia al euqipo responsable."
-  RISE "¡Correcto! Antes del reingreso debemos contar con información de navegación confiable. Una maniobra incorrecta podria comprometer la seguridad de la nave."
+    "Comparar los datos, comprobar la información de navegación y comunicar la discrepancia al euqipo responsable.":
+     RISE "¡Correcto! Antes del reingreso debemos contar con información de navegación confiable. Una maniobra incorrecta podria comprometer la seguridad de la nave."
 
-  "Modificar inmediatamente la orientación sin verificar los instrumentos."
-  RISE "No."
+    "Modificar inmediatamente la orientación sin verificar los instrumentos.":
+     RISE "No."
 
-  c "Y todabía nos esperan muchas oportunidades para aprender sobre nuestra nave y el espacio que nos rodea."
-  b "Durante el trayecto continuaremos supervisando nuestra trayectoria. Si es necesario, los equipos podrán planificar maniobras de corrección."
-  a "Hemos completado una etapa fundamental. Ahora debemos concentrarnos en lo que viene."
+c "Y todabía nos esperan muchas oportunidades para aprender sobre nuestra nave y el espacio que nos rodea."
+b "Durante el trayecto continuaremos supervisando nuestra trayectoria. Si es necesario, los equipos podrán planificar maniobras de corrección."
+a "Hemos completado una etapa fundamental. Ahora debemos concentrarnos en lo que viene."
 
 RISE "¡Felicidades explorador! Gracias a tus desiciones hemos completado las verificaciones de navegación de nuestro simulador."
 RISE "Hoy aprendiste que viajar a la luna requiere cálculos precisos, información confiable y una gras coordinación entre los astronautas y el equipo de tierra."
@@ -715,12 +717,71 @@ RISE "Pero nuestra aventura todabía no termina."
 
 RISE "Nuestro siguiente desafío será explorar uno delos lugares más fascinantes del espacio: el lado oculto de la luna."
 
-#Etapa 4. Plataforma 39B 
-RISE "Explorador, nuestra consola de entrenamiento muestra una discrepancia entre dos estimaciones de orientación."
+#Etapa 2. Reingreso atmosférico y desaceleración.
 
+RISE "¡Comienza el reingreso! Orion viaja a una velocidad extraordinaria y debe reducirla para regresar de forma segura."
+
+c "El escudo térmico protege la cápsula de las temperaturas extremas que se generan durante el reingreso."
+d "La nave experimentará una desaceleración considerable. Todos debemos permanecer asegurados."
+
+RISE "Explorador, oberva los indicadores. La velocidad está disminuyendo y debemos reconocer las etapas que permitirán completar el descenso."
+
+#Desafio 2. Secuencia de aceleración
+label escena_2_2:
+    RISE "¿Cuál es el orden correcto de las principales fases de descenso?"
+
+    menu:  
+        "Paracaidas, reingreso atmosferico, amerizaje.":
+         RISE "Recuerda que primero la cápsula debe atravesar la atmósfera, despues reducir su velocidad y finalmente abrir sus paracaidas antes de tocar el océano."
+
+        "Reingreso atmosférico, desaceleración aerodinámica, despliegue de paracaídas.":
+         RISE "La atmosfera contribuye primero a reducir la velocidad. Despues, el sistema de paracaidas permite completar el descenso hacia el océano."
+
+        "Reingreso atmosférico, amerizaje, despliegue de paracaídas.":
+         RISE "Recuerda que primero la cápsula debe atravesar la atmósfera, despues reducir su velocidad y finalmente abrir sus paracaidas antes de tocar el océano."
+
+RISE "¡Paracaídas desplegados! La cápsula continúa reduciendo su velocidad."
+b "Seguimos descendiendo hacia la zona de amerizaje."
+a "Preparados para el contacto con el agua."
+
+#Etapa 3. Amerizaje y regreso a casa ¿
+  
+RISE "¡Explorador, estamos a punto de completar nuestra misión!."
+
+RISE "¡Amerizaje confirmado! Orion ha regresado a la Tierra."
+
+"Orion, Huston. Iniciamos la coordinación de las operaciones de recuperación."
+
+ #Desafio 3. Confirmación del amerizaje.
+label escena3__1:
+ RISE "La cápsula se encuentra en el océano. Antes de dar por terminada nuestra simulación, necesitamos verificar su estado."
+ RISE "¿Qué información debemos confirmar?"
 menu: 
- "¿Que debemos hacer?"
- 
+
+        "Únicamente que la cápsula haya tocado el agua.":
+         RISE "Recuerda, el amerizaje no termina la misión; primero debemos verificar que todo esté seguro."
+
+        "El estado de la tripulación, las condiciones de la cápsula y la comunicación con los equipos de recuperación.":
+         RISE "¡Exelenete! El regreso no termina con el contacto con el océano. Los equipos deben confirmar el estado de la tripulación y coordinar su recuperación."
+
+        "Que los motores continúen encendidos.":
+         RISE "Recuerda, el amerizaje no termina la misión; primero debemos verificar que todo esté seguro."
+
+a "Huston, aquí Artemis II. Hemos regresado."
+b "Ha sido un viaje extraordinario."
+c "Todo lo que aprendimos ayudará a preparar las proximas misiones."
+d "Nuestro viaje termina aquí, pero la exploración continúa."
+
+RISE "¡Lo logramos, explorador! Hemos completado nuestro viaje alrededor de la luna y regresado a casa."
+RISE "Desde el alnzamiento hasta el amerizaje, cada etapa nos enseñó que la exploración espacial requiere precición, conocimiento y trabajo en equipo."
+RISE "Y recuerda: este es solo el comienzo de una nueva era de exploración."
+
+"MISIÓN COMPLETADA."
+
+
+
+
+
 
 
 
