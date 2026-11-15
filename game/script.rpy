@@ -54,6 +54,35 @@ image 31 = "31.png"
 image 32 = "32.png"
 image 33 = "33.png"
 image 34 = "34.png"
+image 35 = "35.png"
+image 36 = "36.png"
+image 37 = "37.png"
+image 38 = "38.png"
+image 39 = "39.png"
+image 40 = "40.png"
+image 41 = "41.png"
+image 42 = "42.png"
+image 43 = "43.png"
+image 44 = "44.png"
+image 45 = "45.png"
+image 46 = "46.png"
+image 47 = "47.png"
+image 48 = "48.png"
+image 49 = "49.png"
+image 50 = "50.png"
+image 51 = "51.png"
+image 52 = "52.png"
+image 53 = "53.png"
+image 54 = "54.png"
+image 55 = "55.png"
+image 56 = "56.png"
+image 57 = "57.png"
+image 58 = "58.png"
+image 59 = "59.png"
+image 60 = "60.png"
+image 61 = "61.png"
+image Fin = "Fin.png"
+
 
 # ESCENA 1
 label start:
@@ -558,8 +587,9 @@ label escena_3_1:
 
 #Escena 2. Validación de la trayectoria
 label escena_3_2:
-
+    scene 43
     b "Antes de ejecutar una maniobra necesitamos contar con información confiable sobre la trayectoria y el estado de la nave."
+    scene 44
     RISE "En esta simulación revisaremos tres indicadores: posición estimada, orientación y parámetros de maniobra."
 
     RISE "Todos deben ser coherentes con la solución de navegación aprobada."
@@ -567,84 +597,98 @@ label escena_3_2:
     RISE "Explorador, la consola indica que los parámetros de la maniobra aún necesitan ser validación."
 
     #Desafío 1 - preparación de la TLI
-    
+    scene 45
     menu: 
         "¿Que debemos hacer?"
 
         "Ejecutar la maniobra sin verificar los parametros.":
+        scene 44
          RISE "¡Cuidado, explorador! No debemos realizar una maniobra sin verificar primero los parámetros de navegación. Cada decisión debe basarse en información confiable y en el plan de vuelo aprobado. ¡Inténtalo nuevamente!"
 
         "Comparar los parámetros con la solución aprobada y confirmar las verificaciones.":
+        scene 44
          RISE "¡Excelente! Antes de una maniobra es fundamental confirmar que los datos de navegación y los parametros de ejecución sean coherentes con el plan aprobado."
 
         "Modificar la orientación de Orion sin consultar los datos.":
+        scene 44
          RISE "¡Cuidado, explorador! No debemos realizar una maniobra sin verificar primero los parámetros de navegación. Cada decisión debe basarse en información confiable y en el plan de vuelo aprobado. ¡Inténtalo nuevamente!"
 
 #Escena 3. Una desviación inesperada
 label escena_3_3:
     show screen panel_navegacion
-    
+    scene 46
     RISE "Atención, explorador. Nuestro simulador ha detectado una discrepancia."
     RISE "La trayectoria estimada presenta una pequeña diferencia respecto a la trayectoria planificada."
+    scene 47
     b "Antes de realizar una corrección necesitamos determinar si se trata de una desviación real o de una discrepancia en la información de la navegación"
+    scene 48
     a "Debemos evaluar los datos y mantener comunicación con el equipo de Tierra."
+    scene 46
     RISE "Explorador, necesitamos tu análisis."
 
     #Desafío 2 - desviación simulada
     
+    scene 45
     menu: 
         "¿Qué decisión debemos tomar?"
 
         "Encender inmediatamente los propulsores para corregir la trayectoria.":
+         scene 44
          RISE "¡Cuidado, explorador! No debemos modificar la trayectoria sin verificar primero la información, ni ignorar una posible desviación. Es fundamental analizar los datos y comunicar cualquier discrepancia al equipo de Tierra antes de continuar. ¡Inténtalo nuevamente!"
 
         "Ignorar la discrepancia y continuar con el encendido.":
+         scene 44
          RISE "¡Cuidado, explorador! No debemos modificar la trayectoria sin verificar primero la información, ni ignorar una posible desviación. Es fundamental analizar los datos y comunicar cualquier discrepancia al equipo de Tierra antes de continuar. ¡Inténtalo nuevamente!"
 
         "Comparar las mediciones, comunicar la discrepancia y esperar la evaluación autorizada.":
+         scene 44
          RISE "«¡Excelente trabajo, explorador! Antes de realizar cualquier corrección debemos verificar la información, comparar las mediciones y comunicar la discrepancia al equipo de Tierra. En una misión espacial, cada decisión debe estar respaldada por datos confiables y una evaluación autorizada."
 
+    scene 44
     RISE "La comparación ha permitido identificar una inconsistencia en uno de los datos de nuestro ejercicio."
     RISE "El equipo de simulación ha validado nuevamente la solución de navegación. No es necesaria una corrección adicional en este escenario ficticio."
+    scene 47
     b "Excelente. Ahora contamos con información verificada para continuar con la preparación."
+    scene 48
     a "Sigamos con el procedimiento."
 
 # Escena 4. La inyección translunar
 label escena_3_4:
 
+scene 15
 RISE "¡Excelente trabajo, explorador! Los parámetros de navegación han sido verificados."
 
 RISE "¡Estamos listos para continuar con una de las maniobras más importantes de nuestra misión."
-
+scene 10
 CM "Artemis II, Houston. Los equipos han completado la evaluación. Autorización de la maniobra confirmada."
-
+scene 11
 a "Recibido, Houston. Preparándonos para la inyección traslunar."
-
+scene 12
 b "La orientación está verificada. Preparados para el incendio"
-
+scene 15
 RISE "Exploraodr, durante esta maniobra el motor principal del módulo de servicio europeo de Orion aumentará nuestra velocidad para abandonar la órbita terrestre."
 
 RISE "¡Comenza la inyección traslunar!"
-
+scene 13
 c "Continuamos monitoreando el comportamiento de los sistemas."
-
+scene 14
 d "Cada segundo de esta maniobra nos acerca más a nuestro destino."
-
+scene 10
 CM "Artemis II, Houston. Maniobra completada. Los datos de navegación confirman la trayectoria de salida."
 
 # Escena 5. Rumbo a la Luna
 label escena_3_5:
-
+scene 49
 RISE "Explorador, mira por la ventana."
 
 RISE "La Tierra comienza a quedar atrás. Hemos abandonado nuestra órbita y nuestro siguiente destino es la Luna."
-
+scene 50
 d "Es increíble pensar en todo lo que hemos recorrido para llegar hasta aquí."
-
+scene 51
 c "Y todavía nos esperan muchas oportunidades para aprender sobre nuestra nave y el espacio que nos rodea."
-
+scene 53
 a "Hemos completado una etapa fundamental. Ahora debemos concentrarnos en lo que viene."
-
+scene 49
 RISE "¡Felicidades, explorador! Gracias a tus decisiones hemos completado las verificaciones de navegación de nuestro simulador."
 
 RISE "Hoy aprendiste que viajar a la Luna requiere cálculos precisos, información confiable y una gran coordinación entre los astronautas y el equipo de Tierra."
@@ -656,13 +700,13 @@ RISE "Nuestro siguiente desafío será explorar uno de los lugares más fascinan
 RISE "Explorador, hemos llegado al momento más esperado de la misión."
 
 RISE "Frente a nosotros se encuentra el Space Launch System, listo para llevar a la tripulación de Artemis II al espacio."
-
+scene 50
 a "Artemis II lista para el lanzamiento."
 
 CM "Inicio de secuencia terminal."
-
+scene 52
 b "Todos los sistemas verificados."
-
+scene 49
 RISE "Explorador, comienza la cuenta regresiva."
 
 "T-3"
@@ -674,29 +718,29 @@ RISE "¡Ignición!"
 "El SLS enciende sus motores y una enorme columna de humo y fuego envuelve la plataforma."
 
 RISE "¡Despegue confirmado!"
-
+scene 53
 d "Estamos en camino."
-
+scene 49
 RISE "El SLS comienza su ascenso, superando la gravedad terrestre."
-
+scene 51
 c "Todos atentos a los indicadores."
-
+scene 50
 a "Seguimos con el procedimiento."
-
+scene 49
 RISE "La mision ha comenzado. Próxima etapa: ascenso y separación de propulsores."
 
 RISE "¡Explorador, estamos de regreso! Después de nuestro viaje alrededor de la Luna, nos aproxima nuevamente a la Tierra."
-
+scene 50
 a "estamos llegando a una de las fases más importantes de nuestra misión: el regreso atmosférico."
-
+scene 52
 b " Necesitamos comprobar nuestra trayectoria y asegurarnos de que la nave esté preparada para entrar en la atmosfera."
-
+scene 49
 RISE "Durante esta etapa, supervisaremos la velocidad, la orientación u la trayectoria."
 
 #Desafio 1. Verificación de reingreso 
-
+scene 44
 RISE "Explorador, nuestra consola de entretenimiento muestra una discrepancia entre dos estimaciones de orientación."
-
+scene 45
 menu:
     "ignorar la diferencia y continuar.":
      RISE "No."
@@ -706,11 +750,14 @@ menu:
 
     "Modificar inmediatamente la orientación sin verificar los instrumentos.":
      RISE "No."
-
+scene 55
 c "Y todabía nos esperan muchas oportunidades para aprender sobre nuestra nave y el espacio que nos rodea."
+scene 43
 b "Durante el trayecto continuaremos supervisando nuestra trayectoria. Si es necesario, los equipos podrán planificar maniobras de corrección."
+scene 56
 a "Hemos completado una etapa fundamental. Ahora debemos concentrarnos en lo que viene."
 
+scene 44
 RISE "¡Felicidades explorador! Gracias a tus desiciones hemos completado las verificaciones de navegación de nuestro simulador."
 RISE "Hoy aprendiste que viajar a la luna requiere cálculos precisos, información confiable y una gras coordinación entre los astronautas y el equipo de tierra."
 RISE "Pero nuestra aventura todabía no termina."
@@ -719,33 +766,43 @@ RISE "Nuestro siguiente desafío será explorar uno delos lugares más fascinant
 
 #Etapa 2. Reingreso atmosférico y desaceleración.
 
+scene 57
 RISE "¡Comienza el reingreso! Orion viaja a una velocidad extraordinaria y debe reducirla para regresar de forma segura."
 
+scene 58
 c "El escudo térmico protege la cápsula de las temperaturas extremas que se generan durante el reingreso."
+scene 59
 d "La nave experimentará una desaceleración considerable. Todos debemos permanecer asegurados."
-
+scene 57
 RISE "Explorador, oberva los indicadores. La velocidad está disminuyendo y debemos reconocer las etapas que permitirán completar el descenso."
 
 #Desafio 2. Secuencia de aceleración
 label escena_2_2:
+scene 57
     RISE "¿Cuál es el orden correcto de las principales fases de descenso?"
-
+    scene 60
     menu:  
         "Paracaidas, reingreso atmosferico, amerizaje.":
+        scene 57
          RISE "Recuerda que primero la cápsula debe atravesar la atmósfera, despues reducir su velocidad y finalmente abrir sus paracaidas antes de tocar el océano."
 
         "Reingreso atmosférico, desaceleración aerodinámica, despliegue de paracaídas.":
+        scene 57
          RISE "La atmosfera contribuye primero a reducir la velocidad. Despues, el sistema de paracaidas permite completar el descenso hacia el océano."
 
         "Reingreso atmosférico, amerizaje, despliegue de paracaídas.":
+        scene 57
          RISE "Recuerda que primero la cápsula debe atravesar la atmósfera, despues reducir su velocidad y finalmente abrir sus paracaidas antes de tocar el océano."
 
+scene 57
 RISE "¡Paracaídas desplegados! La cápsula continúa reduciendo su velocidad."
+scene 61
 b "Seguimos descendiendo hacia la zona de amerizaje."
+scene 59
 a "Preparados para el contacto con el agua."
 
 #Etapa 3. Amerizaje y regreso a casa ¿
-  
+scene 15
 RISE "¡Explorador, estamos a punto de completar nuestra misión!."
 
 RISE "¡Amerizaje confirmado! Orion ha regresado a la Tierra."
@@ -756,17 +813,21 @@ RISE "¡Amerizaje confirmado! Orion ha regresado a la Tierra."
 label escena3__1:
  RISE "La cápsula se encuentra en el océano. Antes de dar por terminada nuestra simulación, necesitamos verificar su estado."
  RISE "¿Qué información debemos confirmar?"
+ scene 10
 menu: 
 
         "Únicamente que la cápsula haya tocado el agua.":
+        scene 15
          RISE "Recuerda, el amerizaje no termina la misión; primero debemos verificar que todo esté seguro."
 
         "El estado de la tripulación, las condiciones de la cápsula y la comunicación con los equipos de recuperación.":
+         scene 15
          RISE "¡Exelenete! El regreso no termina con el contacto con el océano. Los equipos deben confirmar el estado de la tripulación y coordinar su recuperación."
 
         "Que los motores continúen encendidos.":
+         scene 15
          RISE "Recuerda, el amerizaje no termina la misión; primero debemos verificar que todo esté seguro."
-
+scene Fin
 a "Huston, aquí Artemis II. Hemos regresado."
 b "Ha sido un viaje extraordinario."
 c "Todo lo que aprendimos ayudará a preparar las proximas misiones."
