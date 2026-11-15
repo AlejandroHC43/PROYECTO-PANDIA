@@ -109,21 +109,130 @@ label escena_3:
     RISE "Este procedimiento permite actualizar información del software de vuelo del SLS para considerar las condiciones ambientales del día del lanzamiento."
 
     # Desafío 1: Evaluación meteorológica
+
     menu:
-        "Debemos decidir qué hacer:"
+            "Debemos decidir qué hacer"
 
-        "Continuar con los parámetros anteriores sin revisar los cambios.":
-            RISE "Recuerda que las condiciones atmosféricas influyen en las cargas que experimenta el cohete durante el ascenso."
-            RISE "No podemos ignorar esta información. Revisemos nuevamente el procedimiento."
-            #jump escena_4
+            "Continuar con los parámetros anteriores sin revisar los cambios.":
+                RISE "Recuerda que las condiciones atmosféricas influyen en las cargas que experimenta el cohete durante el ascenso."
+                RISE "No podemos ignorar esta información. Revisemos nuevamente el procedimiento."
+                jump escena_4
 
-        "Incorporar los datos meteorológicos, actualizar DOLILU y verificar la trayectoria.":
-            RISE "¡Excelente trabajo! Los datos meteorológicos deben integrarse en la actualización y los equipos deben verificar los resultados antes de continuar."
-            RISE "Has completado tu primera tarea."
-            #jump escena_4
+            "Incorporar los datos meteorológicos, actualizar DOLILU y verificar la trayectoria.":
+                RISE "¡Excelente trabajo! Los datos meteorológicos deben integrarse en la actualización y los equipos deben verificar los resultados antes de continuar."
+                RISE "Has completado tu primera tarea."
+                jump escena_4
 
-        "Ignorar los vientos porque el cohete ya está preparado.":
-            RISE "Recuerda que las condiciones atmosféricas influyen en las cargas que experimenta el cohete durante el ascenso."
-            RISE "No podemos ignorar esta información. Revisemos nuevamente el procedimiento."
-            #jump escena_4
+            "Ignorar los vientos porque el cohete ya está preparado.":
+                RISE "Recuerda que las condiciones atmosféricas influyen en las cargas que experimenta el cohete durante el ascenso."
+                RISE "No podemos ignorar esta información. Revisemos nuevamente el procedimiento."
+                jump escena_4
+
+# Escena 4. La verificación final
+label escena_4:
+
+    scene FONDO1
+
+    RISE "Los parámetros actualizados deben comprobarse antes de su utilización."
+
+    RISE "Los equipos de NASA realizan verificaciones independientes de la trayectoria y de las cargas estructurales mediante simulaciones por computadora."
+
+    RISE "La actualización se carha aproximadamente una hora antes del lanzamiento y debe realizarse a más tardar 40 minutos antes."
+
+    #Desafío 2: Validación de datos
+
+    menu:
+        "Tenemos tres opciones para continuar. ¿Cuál debemos seguir?:"
+
+        "Cargar los datos y continuar sin realizar verificaciones adicionales.":
+         RISE "¡No tan rápido! Antes de continuar, recuerda que los datos de una misión deben ser confiables y corresponder a las condiciones actuales. No es recomendable avanzar sin comporbar la información ni utilizar parámetros de otras misiones sin validarlos." 
+        #jump escena_5
+
+        "Verificar los resultados de trayectoria y cargas, confirmar la correcta.":
+         RISE "¡Correcto! La información debe verificarse antes de continuar. En una misión espacial, la comunicación entre los equipos es tan importante como los propios datos."
+
+        "Utilizar los parámetros de un lanzamiento anterior.":
+         RISE "No"
+        #jump escena_5
+
+    RISE "La preparación continúa. Vamos a comunicarnos con la tripulación"
+
+#Escena 5. Comunicación con Orión
+label escena_5:
+
+    scene FONDO2
+
+    "Artemis II, comprobación de comunicaciones."
+
+    a "Aquí Artemis II. Comunicaciones recibidas correctamente."
+
+    b "Los sistemas de la nave están siendo revisados."
+
+    c "La tripulación continúa con las comprobaciones previas al lanzamiento."
+
+    d "Estamos preparados para comenzar esta aventura."
+
+    RISE "Explorador, hemos llegado a uno de los momentos más importantes. La secuencia de lanzamiento está próxima a comenzar."
+
+    RISE "Recuerda: durante el ascenso, el equipo de Tierra continuará supervisando el comportamiento del vehículo. Tu función será interpretar la información de nuestra simulación."
+
+#Escena 6. La cuenta regresiva.
+label escena_6:
+
+    scene FONDO1
+
+    RISE "Fecha: 1 de abril de 2026."
+
+    RISE "Ubicación: Centro Espacial Kennedy, Florida."
+
+    RISE "Vehículo: Space Launch System."
+
+    RISE "Nave espacial: Orion."
+
+    RISE "Tripulación: cuatro astronautas."
+
+    RISE "¡Despegue!"
+
+#Escena 7. El ascenso y la separación de propulsores
+label escena_7
+
+    scene FONDO2
+
+    RISE "El SLS continúa su ascenso. Durante esta fase, el vehículo debe superar las fuerzas aerodinámicas y mantener su trayectoria."
+
+    RISE "Aproximadamente dos minutos después del despegue, los propulsores sólidos completan su función y se sparan del vehículo."
+
+    VICTOR "La nave continúa su trayectoria."
+
+    REID "Seguimos atentos a los indicadores."
+
+    RISE "La separación de los propulsores es una de las etapas importantes del ascenso. Debemos continuar supervisando la información de vuelo."
+
+#Escena 8. Una anomalía durante el entrenamiento
+label escena_8
+
+    scene FONDO1
+
+    RISE "Explorador, vamos a realizar un ejercicio de entrenamiento adicional."
+
+    RISE "Se ha presentado una lectura de presión intermitente en nuestro escenario simulado. Necesitamos identificar la respuesta adecuada."
+
+    #Desafío 3: Análisis de Telemetría
+
+    menu:
+        "¿Qué debemos hacer?"
+
+        "Modificar manualmente la válvula para intentar corregir la lectura.":
+            RISE "¡Espera!, una alerta no debe ignorarse, pero tampoco debemos intervenir directamente en un siste"
+        #jump escena_9
+
+        "Ignorar la alerta porque el vehículo continúa volando.":
+         RISE "No."
+        #jump escena_9
+
+        "Comparar la información con otros indicadores, comunicar la anomalía al especialista responsable y seguir el procedimiento establecido.":
+            RISE "Muy bien! Una lectura anormal no significa necesariamente que exista una falla real en el sistema."
+            RISE "Debemos contrastar la información, comunicar la situación y permitir que los especialistas responsables evalúen los datos."
+            RISE "En una misión espacioal, reaccionar rápidamente es importante, pero hacerlo sin información suficiente puede generar nuevos riesgos."
+
 return
